@@ -1,6 +1,6 @@
 #from curses import wrapper
 import curses 
-
+#cambio esto 
 def main():
     
     stdscr = curses.initscr()
