@@ -11,6 +11,9 @@ def main():
     matriz = dibujarEsquinas(matriz)
     matriz = lineasRectas(matriz)
     matriz = celulas_aleatorias(matriz,26,82,95)#EJEMPLO DE CUANDO ES RANDOM PICHILLA el cuarto parametro son las cels vivas
+                                                #las dimensiones aumentan en 2 en cada lado, porque les estoy metiendo
+                                                #2 lineas mas para dibujar el cuadradito ese gay, por si eso te confunde
+                                                #osea ahi en realidad la matriz de juego es 24 - 80 
     #stdscr.clear()
     i = 0
     while i < len(matriz):
