@@ -9,7 +9,7 @@ def main():
     stdscr = curses.initscr()
     matriz = formarMatriz(24,80)#estas son las dimensiones
     matriz = dibujarEsquinas(matriz)
-    matriz = lineasVerticales(matriz)
+    matriz = lineasRectas(matriz)
     matriz = celulas_aleatorias(matriz,26,82,95)#EJEMPLO DE CUANDO ES RANDOM PICHILLA el cuarto parametro son las cels vivas
     #stdscr.clear()
     i = 0
@@ -42,27 +42,27 @@ def formarMatriz(x,y):
         i += 1
     return matriz
 
-def dibujarEsquinas(ventana):
-    ventana[0][0] = "@"
-    ventana[0][len(ventana[0])-1] = "@"
-    ventana[len(ventana)-1][0] = "@"
-    ventana[len(ventana)-1][len(ventana[0])-1] = "@"
-    return ventana
+def dibujarEsquinas(matriz):
+    matriz[0][0] = "@"
+    matriz[0][len(matriz[0])-1] = "@"
+    matriz[len(matriz)-1][0] = "@"
+    matriz[len(matriz)-1][len(matriz[0])-1] = "@"
+    return matriz
     
-def lineasVerticales(ventana):
+def lineasRectas(matriz):
     i = 1
-    while(i < len(ventana)-1):
-        ventana[i][0] = "|"
-        ventana[i][len(ventana[0])-1] = "|"
+    while(i < len(matriz)-1):
+        matriz[i][0] = "|"
+        matriz[i][len(matriz[0])-1] = "|"
         i += 1
     
     j = 1
-    while(j < len(ventana[0])-1):
-        ventana[0][j] = "-"
-        ventana[len(ventana)-1][j] = "-"   
+    while(j < len(matriz[0])-1):
+        matriz[0][j] = "-"
+        matriz[len(matriz)-1][j] = "-"   
         j += 1
         
-    return ventana
+    return matriz
     
 
 def celulas_aleatorias(matriz,filas,columnas,cantidad):
