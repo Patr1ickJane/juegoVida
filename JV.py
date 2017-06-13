@@ -3,18 +3,20 @@ import curses
 import random
 #mas adelante hago que el usuario pida las dimensiones y bla bla bla, por ahora lo hago asi para probar primero que
 #mi algoritmo funciona correctamente xD
-
+#culo
 def main():
-    
+    parar = "s"
     stdscr = curses.initscr()
-    matriz = formarMatriz(24,80)#estas son las dimensiones
+    matriz = formarMatriz(5,5)#estas son las dimensiones
     matriz = dibujarEsquinas(matriz)
     matriz = lineasRectas(matriz)
-    matriz = celulas_aleatorias(matriz,26,82,95)#EJEMPLO DE CUANDO ES RANDOM PICHILLA el cuarto parametro son las cels vivas
-                                                #las dimensiones aumentan en 2 en cada lado, porque les estoy metiendo
-                                                #2 lineas mas para dibujar el cuadradito ese gay, por si eso te confunde
-                                                #osea ahi en realidad la matriz de juego es 24 - 80 
-    #stdscr.clear()
+    matriz = celulas_aleatorias(matriz,7,7,5)#EJEMPLO DE CUANDO ES RANDOM PICHILLA el cuarto parametro son las cels vivas
+                                             #las dimensiones aumentan en 2 en cada lado, porque les estoy metiendo
+                                             #2 lineas mas para dibujar el cuadradito ese gay, por si eso te confunde
+                                             #osea ahi en realidad la matriz de juego es 24 - 80 
+
+    matriz = celulas_aleatorias(matriz,7,7,5)
+    stdscr.clear()
     i = 0
     while i < len(matriz):
         j = 0
@@ -23,8 +25,12 @@ def main():
             j += 1
         stdscr.addstr("\n")
         i += 1
+        
     
     
+    mierda = stdscr.getchr()
+    stdscr.clear
+    stdscr.addstr(mierda)
     stdscr.getkey()
     curses.endwin()
 
