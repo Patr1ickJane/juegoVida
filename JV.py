@@ -1,7 +1,7 @@
 
 import curses 
 import random
-import time
+
 #mas adelante hago que el usuario pida las dimensiones y bla bla bla, por ahora lo hago asi para probar primero que
 #mi algoritmo funciona correctamente xD
 #PARA QUE FUNCIONE DEBE TENER LA VENTANA DE COMANDOS TOTALMENTE ABIERTA, ESOS DETAALLES GAYS LOS ARREGLO AL FINAL
